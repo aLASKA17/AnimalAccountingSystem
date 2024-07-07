@@ -1,5 +1,5 @@
 public class Rule {
-    private int id;
+
     private String switchId;
     private String description;
 
@@ -9,14 +9,6 @@ public class Rule {
 
     public String getDescription() {
         return description;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getSwitchId() {

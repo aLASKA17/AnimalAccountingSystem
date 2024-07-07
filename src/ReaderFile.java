@@ -19,7 +19,6 @@ public class ReaderFile {
             throw new RuntimeException(e);
         }
         return animals;
-
     }
 
     public static List<Rule> ReaderRuleInfo(String filepath) {
@@ -39,5 +38,4 @@ public class ReaderFile {
         }
         return rules;
     }
-
 }
