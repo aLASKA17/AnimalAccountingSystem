@@ -10,6 +10,7 @@ public class ReaderFile {
     public static Set<String> weightOption = new HashSet<>();
     public static Set<String> heightOption = new HashSet<>();
 
+    //  Чтение списка из файла,добавление параметров в Set и создание нового объекта
     public static List<Animals> ReaderAnimalInfo(String filepath) {
         List<Animals> animals = new ArrayList<>();
         try {
@@ -29,6 +30,7 @@ public class ReaderFile {
         return animals;
     }
 
+    //  Чтение списка из файла и создание нового объекта
     public static List<Rule> ReaderRuleInfo(String filepath) {
         List<Rule> rules = new ArrayList<>();
         try {

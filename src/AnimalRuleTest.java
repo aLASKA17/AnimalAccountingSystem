@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AnimalRuleTest {
 
+    //  Добавление параметров фильтра до начала тестов
     @BeforeAll
     static void setup() {
         AnimalRule.typeOptionList = Arrays.asList("ВСЕЯДНОЕ", "ТРАВОЯДНОЕ", "ПЛОТОЯДНОЕ");
@@ -13,6 +14,7 @@ class AnimalRuleTest {
         AnimalRule.heightOptionList = Arrays.asList("МАЛЕНЬКОЕ", "НЕВЫСОКОЕ", "ВЫСОКОЕ");
     }
 
+    //  Тестирование правила: Сколько животных – травоядных
     @Test
     void countHerbivores() {
         List<Animals> animals = Arrays.asList(
@@ -25,6 +27,7 @@ class AnimalRuleTest {
         assertEquals(4,AnimalRule.CountHerbivores(animals));
     }
 
+    //  Тестирование правила: Сколько животных – травоядных или плотоядных и они при этом маленькие
     @Test
     void countHerbivoresOrCarnivoresAndSmall() {
         List<Animals> animals = Arrays.asList(
@@ -37,6 +40,7 @@ class AnimalRuleTest {
         assertEquals(1,AnimalRule.CountHerbivoresOrCarnivoresAndSmall(animals));
     }
 
+    //  Тестирование правила: Сколько животных – всеядных, но не являются высокими
     @Test
     void countOmnivoresNotTall() {
         List<Animals> animals = Arrays.asList(
