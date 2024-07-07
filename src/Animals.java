@@ -5,10 +5,6 @@ public class Animals {
     private String weight;
     private String height;
 
-    public String getHeight() {
-        return height;
-    }
-
     public Animals(String name, String type, String weight, String height){
         this.name = name;
         this.type = type;
@@ -20,6 +16,10 @@ public class Animals {
         return type;
     }
 
+    public String getHeight() {
+        return height;
+    }
+
     public String getName() {
         return name;
     }
@@ -27,10 +27,4 @@ public class Animals {
     public String getWeight() {
         return weight;
     }
-
-
-
-
-
-
 }

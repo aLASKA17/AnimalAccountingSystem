@@ -1,10 +1,15 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 
 public class ReaderFile {
+
+    public static Set<String> typeOption = new HashSet<>();
+    public static Set<String> weightOption = new HashSet<>();
+    public static Set<String> heightOption = new HashSet<>();
+
     public static List<Animals> ReaderAnimalInfo(String filepath) {
         List<Animals> animals = new ArrayList<>();
         try {
@@ -13,6 +18,9 @@ public class ReaderFile {
             while ((line = bufferedReader.readLine()) != null){
                 String[] values = line.split(",");
                 Animals animal = new Animals(values[0],values[1],values[2],values[3]);
+                typeOption.add(values[1]);
+                weightOption.add(values[2]);
+                heightOption.add(values[3]);
                 animals.add(animal);
             }
         } catch (IOException e) {

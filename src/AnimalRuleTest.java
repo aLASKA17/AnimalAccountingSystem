@@ -1,11 +1,17 @@
 import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.BeforeAll;
 import java.util.Arrays;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class AnimalRuleTest {
+
+    @BeforeAll
+    static void setup() {
+        AnimalRule.typeOptionList = Arrays.asList("ВСЕЯДНОЕ", "ТРАВОЯДНОЕ", "ПЛОТОЯДНОЕ");
+        AnimalRule.weightOptionList = Arrays.asList("ЛЕГКОЕ", "СРЕДНЕЕ", "ТЯЖЕЛОЕ");
+        AnimalRule.heightOptionList = Arrays.asList("МАЛЕНЬКОЕ", "НЕВЫСОКОЕ", "ВЫСОКОЕ");
+    }
 
     @Test
     void countHerbivores() {
