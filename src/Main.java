@@ -1,10 +1,9 @@
-import java.sql.SQLException;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
-        List<Animals> animals = ReaderFile.ReaderAnimalInfo("C:\\Users\\valer\\IdeaProjects\\AnimalAccountingSystem\\src\\Animals");
-        List<Rule> rules = ReaderFile.ReaderRuleInfo("C:\\Users\\valer\\IdeaProjects\\AnimalAccountingSystem\\src\\Rule");
+    public static void main(String[] args){
+        List<Animals> animals = ReaderFile.ReaderAnimalInfo(".\\src\\Animals");
+        List<Rule> rules = ReaderFile.ReaderRuleInfo(".\\src\\Rule");
 
         for (Rule rule : rules) {
             switch (rule.getSwitchId()) {
