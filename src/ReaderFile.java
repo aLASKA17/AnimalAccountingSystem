@@ -3,7 +3,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-
 public class ReaderFile {
 
     public static Set<String> typeOption = new HashSet<>();

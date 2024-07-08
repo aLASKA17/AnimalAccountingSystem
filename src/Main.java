@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args){
@@ -16,13 +15,13 @@ public class Main {
         for (Rule rule : rules) {
             switch (rule.getSwitchId()) {
                 case "1":
-                    System.out.println(rule.getDescription() + " - " + AnimalRule.CountHerbivores(animals));
+                    System.out.println(rule.getDescription() + " - " + animalRule.CountHerbivores(animals));
                     break;
                 case "2":
-                    System.out.println(rule.getDescription() + " - " + AnimalRule.CountHerbivoresOrCarnivoresAndSmall(animals));
+                    System.out.println(rule.getDescription() + " - " + animalRule.CountHerbivoresOrCarnivoresAndSmall(animals));
                     break;
                 case "3":
-                    System.out.println(rule.getDescription() + " - " + AnimalRule.CountOmnivoresNotTall(animals));
+                    System.out.println(rule.getDescription() + " - " + animalRule.CountOmnivoresNotTall(animals));
                     break;
                 default:
                     System.out.println("Неизвестное правило");

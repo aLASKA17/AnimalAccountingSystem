@@ -6,12 +6,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AnimalRuleTest {
 
+    private static AnimalRule animalRule;
+
     //  Добавление параметров фильтра до начала тестов
     @BeforeAll
     static void setup() {
-        AnimalRule.typeOptionList = Arrays.asList("ВСЕЯДНОЕ", "ТРАВОЯДНОЕ", "ПЛОТОЯДНОЕ");
-        AnimalRule.weightOptionList = Arrays.asList("ЛЕГКОЕ", "СРЕДНЕЕ", "ТЯЖЕЛОЕ");
-        AnimalRule.heightOptionList = Arrays.asList("МАЛЕНЬКОЕ", "НЕВЫСОКОЕ", "ВЫСОКОЕ");
+        animalRule = new AnimalRule();
+        animalRule.typeOptionList = Arrays.asList("ВСЕЯДНОЕ", "ТРАВОЯДНОЕ", "ПЛОТОЯДНОЕ");
+        animalRule.weightOptionList = Arrays.asList("ЛЕГКОЕ", "СРЕДНЕЕ", "ТЯЖЕЛОЕ");
+        animalRule.heightOptionList = Arrays.asList("МАЛЕНЬКОЕ", "НЕВЫСОКОЕ", "ВЫСОКОЕ");
     }
 
     //  Тестирование правила: Сколько животных – травоядных
@@ -24,7 +27,7 @@ class AnimalRuleTest {
                 new Animals("ЗЕБРА","ТРАВОЯДНОЕ","СРЕДНЕЕ","НЕВЫСОКОЕ"),
                 new Animals("ЛЕМУР","ТРАВОЯДНОЕ","ЛЕГКОЕ","МАЛЕНЬКОЕ")
         );
-        assertEquals(4,AnimalRule.CountHerbivores(animals));
+        assertEquals(4,animalRule.CountHerbivores(animals));
     }
 
     //  Тестирование правила: Сколько животных – травоядных или плотоядных и они при этом маленькие
@@ -37,7 +40,7 @@ class AnimalRuleTest {
                 new Animals("КРЫСА","ВСЕЯДНОЕ","ЛЕГКОЕ","МАЛЕНЬКОЕ"),
                 new Animals("ЛЕМУР","ТРАВОЯДНОЕ","ЛЕГКОЕ","МАЛЕНЬКОЕ")
         );
-        assertEquals(1,AnimalRule.CountHerbivoresOrCarnivoresAndSmall(animals));
+        assertEquals(1,animalRule.CountHerbivoresOrCarnivoresAndSmall(animals));
     }
 
     //  Тестирование правила: Сколько животных – всеядных, но не являются высокими
@@ -51,6 +54,6 @@ class AnimalRuleTest {
                 new Animals("ЗЕБРА","ТРАВОЯДНОЕ","СРЕДНЕЕ","НЕВЫСОКОЕ")
 
         );
-        assertEquals(2,AnimalRule.CountOmnivoresNotTall(animals));
+        assertEquals(2,animalRule.CountOmnivoresNotTall(animals));
     }
 }
